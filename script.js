@@ -1,5 +1,3 @@
-console.log('Hello World !');
-
 const board = document.getElementById("sketch");
 
 for (i = 0; i < 256; i++) {
@@ -8,4 +6,4 @@ for (i = 0; i < 256; i++) {
     board.appendChild(div);
 }
 
-console.log(board.childElementCount);
+console.log("Grid size: " + board.childElementCount);

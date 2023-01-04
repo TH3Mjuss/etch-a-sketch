@@ -58,6 +58,12 @@ h1 {
     margin: 10px;
 }
 
+#sketch {
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    grid-gap: 5px;
+}
+
 footer{
     text-align: center;
     padding: 10px;
