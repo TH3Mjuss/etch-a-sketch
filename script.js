@@ -2,6 +2,7 @@ const board = document.getElementById("sketch");
 
 console.log(board);
 
+//Populate Grid
 function gridSize(defaultSize) {
     
     if (board.childElementCount != 0) {
@@ -9,7 +10,7 @@ function gridSize(defaultSize) {
         board.innerHTML = '';
     }
 
-    let size = Number(prompt("Choose your desired grid size (max 100):", "16"));
+    let size = Number(prompt("Choose your desired grid size (max 100):", defaultSize));
 
     if (size < 4 || size > 100) {
         alert("Incorrect size. Size expected between 4 and 100. Default size set to 16.")
@@ -19,6 +20,8 @@ function gridSize(defaultSize) {
 
     let totalSize = size * size;
 
+    board.style.setProperty("--grid-size", size);  // send grid size to CSS
+
     console.log("grid size will be: " + totalSize);
 
     for (i = 0; i < totalSize; i++) {
@@ -27,9 +30,22 @@ function gridSize(defaultSize) {
         board.appendChild(div);
     }
 
-    console.log("i = " + i)
-
-//    return totalSize;
+    console.log("i = " + i);
 };
+
+// Change grid elements color on mouse over
+function paintDOM(clr) {
+    return clr;
+}
+
+console.log(clr);
+board.addEventListener("mouseover", function(event) {
+    event.target.style.color = "$clr";
+
+    setTimeout(function() {
+        event.target.style.color = "";
+    }, 500);
+}, false);
+
 
 console.log("Grid size: " + board.childElementCount);
