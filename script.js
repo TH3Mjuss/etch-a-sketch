@@ -35,17 +35,14 @@ function gridSize(defaultSize) {
 
 // Change grid elements color on mouse over
 function paintDOM(clr) {
+    board.addEventListener("mouseover", function(event) {
+        //event.target.style.color = "$clr";
+        board.style.setProperty("--clr", clr);
+       /*  setTimeout(function() {
+            event.target.style.color = "";
+        }, 500); */
+    }, false);
     return clr;
 }
-
-console.log(clr);
-board.addEventListener("mouseover", function(event) {
-    event.target.style.color = "$clr";
-
-    setTimeout(function() {
-        event.target.style.color = "";
-    }, 500);
-}, false);
-
 
 console.log("Grid size: " + board.childElementCount);

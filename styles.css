@@ -62,6 +62,7 @@ h1 {
     display: grid;
     grid-template-columns: repeat(var(--grid-size), 1fr);  /* --grid-size value from script.js */
     grid-gap: 5px;
+    color: var(--clr);
 }
 
 footer{
