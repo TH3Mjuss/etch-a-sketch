@@ -1,36 +1,50 @@
 const board = document.getElementById("sketch");
 
-console.log(board);
-
-//Populate Grid
-function gridSize(defaultSize) {
+//Populate default grid
+if (board.childElementCount == 0) {
+    console.log("Empty Sketch! Populating default grid...");
     
+    board.style.setProperty("--grid-size", 16);
+
+    for (i = 0; i < 256; i++) {
+        const div = document.createElement('div');
+        div.innerText = "i";
+        board.appendChild(div);
+    }
+}
+
+function customSize() {
+
+    let size = Number(prompt("Choose your desired grid size (max 100):", "From 4 to 100"));
+    gridSize(size);
+
+}
+
+//Populate Grid from size buttons
+function gridSize(defaultSize) {
+
     if (board.childElementCount != 0) {
-        console.log('KO');
+        console.log('Sketch board already populated, emptying...');
         board.innerHTML = '';
     }
-
-    let size = Number(prompt("Choose your desired grid size (max 100):", defaultSize));
-
-    if (size < 4 || size > 100) {
+    
+    if (defaultSize < 4 || defaultSize > 100) {
         alert("Incorrect size. Size expected between 4 and 100. Default size set to 16.")
-        size = defaultSize;
+        defaultSize = 16;
     }
 
+    let totalSize = defaultSize * defaultSize;
 
-    let totalSize = size * size;
+    board.style.setProperty("--grid-size", defaultSize);  // send grid size to CSS
 
-    board.style.setProperty("--grid-size", size);  // send grid size to CSS
-
-    console.log("grid size will be: " + totalSize);
+    console.log("Grid size will be: " + totalSize);
 
     for (i = 0; i < totalSize; i++) {
         const div = document.createElement('div');
-        div.innerText="i";
+        div.innerText = "i";
         board.appendChild(div);
     }
 
-    console.log("i = " + i);
 };
 
 // Change grid elements color on mouse over
