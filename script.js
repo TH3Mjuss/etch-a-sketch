@@ -8,7 +8,6 @@ if (board.childElementCount == 0) {
 
     for (i = 0; i < 256; i++) {
         const div = document.createElement('div');
-        div.innerText = "i";
         board.appendChild(div);
     }
 }
@@ -28,7 +27,7 @@ function gridSize(defaultSize) {
         board.innerHTML = '';
     }
     
-    if (defaultSize < 4 || defaultSize > 100) {
+    if (defaultSize < 4 || defaultSize > 100 || isNaN(defaultSize)) {
         alert("Incorrect size. Size expected between 4 and 100. Default size set to 16.")
         defaultSize = 16;
     }
@@ -41,7 +40,6 @@ function gridSize(defaultSize) {
 
     for (i = 0; i < totalSize; i++) {
         const div = document.createElement('div');
-        div.innerText = "i";
         board.appendChild(div);
     }
 

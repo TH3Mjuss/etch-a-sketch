@@ -54,15 +54,22 @@ h1 {
 .sketch-brd {
     border: 2px solid #256D85;
     border-radius: 5px;
-    padding: 5px;
+    padding: 2px;
     margin: 10px;
 }
 
 #sketch {
     display: grid;
     grid-template-columns: repeat(var(--grid-size), 1fr);  /* --grid-size value from script.js */
-    grid-gap: 5px;
-    color: var(--clr);
+    grid-gap: 2px;
+}
+
+#sketch div {
+    width: 10px;
+    height: 10px;
+    padding: 1px;
+    margin: 0;
+    background-color: var(--clr);
 }
 
 footer{
