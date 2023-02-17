@@ -72,6 +72,10 @@ h1 {
     background-color: var(--clr);
 }
 
+#skecth div:hover {
+    background-color: blue;
+}
+
 footer{
     text-align: center;
     padding: 10px;

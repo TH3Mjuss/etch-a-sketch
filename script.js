@@ -12,6 +12,7 @@ if (board.childElementCount == 0) {
     }
 }
 
+//Populate Grid from custom size buttons
 function customSize() {
 
     let size = Number(prompt("Choose your desired grid size (max 100):", "From 4 to 100"));
