@@ -1,5 +1,4 @@
 const board = document.getElementById("sketch");
-let coloredDiv = Number;
 
 //Populate default grid
 if (board.childElementCount == 0) {
@@ -53,7 +52,7 @@ function gridSize(defaultSize) {
 function paintDOM(clr) {
 
     board.addEventListener("mouseover", function(event) {
-        coloredDiv = event.target.id;
+        let coloredDiv = event.target.id;
         console.log("Colored = " + coloredDiv);
 
         if(!isNaN(coloredDiv)) {
