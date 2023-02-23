@@ -69,11 +69,6 @@ h1 {
     height: 10px;
     padding: 1px;
     margin: 0;
-    background-color: var(--clr);
-}
-
-#skecth div:hover {
-    background-color: blue;
 }
 
 footer{

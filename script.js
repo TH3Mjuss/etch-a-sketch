@@ -1,4 +1,5 @@
 const board = document.getElementById("sketch");
+let coloredDiv = Number;
 
 //Populate default grid
 if (board.childElementCount == 0) {
@@ -8,6 +9,7 @@ if (board.childElementCount == 0) {
 
     for (i = 0; i < 256; i++) {
         const div = document.createElement('div');
+        div.setAttribute("id", i);
         board.appendChild(div);
     }
 }
@@ -41,6 +43,7 @@ function gridSize(defaultSize) {
 
     for (i = 0; i < totalSize; i++) {
         const div = document.createElement('div');
+        div.setAttribute("id", i);
         board.appendChild(div);
     }
 
@@ -48,14 +51,16 @@ function gridSize(defaultSize) {
 
 // Change grid elements color on mouse over
 function paintDOM(clr) {
+
     board.addEventListener("mouseover", function(event) {
-        //event.target.style.color = "$clr";
-        board.style.setProperty("--clr", clr);
-       /*  setTimeout(function() {
-            event.target.style.color = "";
-        }, 500); */
+        coloredDiv = event.target.id;
+        console.log("Colored = " + coloredDiv);
+
+        if(!isNaN(coloredDiv)) {
+            let color = document.getElementById(coloredDiv);
+            color.style.backgroundColor = clr;
+        }
     }, false);
-    return clr;
 }
 
 console.log("Grid size: " + board.childElementCount);
