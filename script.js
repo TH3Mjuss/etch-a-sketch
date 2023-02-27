@@ -50,16 +50,20 @@ function gridSize(defaultSize) {
 
 // Change grid elements color on mouse over
 function paintDOM(clr) {
+    // Check for mouse state
+    let mouseDown = 0;
+    board.onmousedown = () => mouseDown = 1;
+    board.onmouseup = () => mouseDown = 0;
 
-    board.addEventListener("mouseover", function(event) {
+    
+    board.addEventListener("mousemove", function(event) {
         let coloredDiv = event.target.id;
+        console.log("Mouse state: " + mouseDown);
         console.log("Colored = " + coloredDiv);
 
-        if(!isNaN(coloredDiv)) {
+        if(!isNaN(coloredDiv) && mouseDown == 1) {
             let color = document.getElementById(coloredDiv);
             color.style.backgroundColor = clr;
         }
     }, false);
 }
-
-console.log("Grid size: " + board.childElementCount);
