@@ -5,6 +5,7 @@ if (board.childElementCount == 0) {
     console.log("Empty Sketch! Populating default grid...");
     
     board.style.setProperty("--grid-size", 16);
+    board.style.setProperty("--div-size", 25);
 
     for (i = 0; i < 256; i++) {
         const div = document.createElement('div');
@@ -35,8 +36,10 @@ function gridSize(defaultSize) {
     }
 
     let totalSize = defaultSize * defaultSize;
+    let divSize = 400 / defaultSize;
 
     board.style.setProperty("--grid-size", defaultSize);  // send grid size to CSS
+    board.style.setProperty("--div-size", divSize); // send sketch pixel size to CSS
 
     console.log("Grid size will be: " + totalSize);
 
