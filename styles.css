@@ -17,6 +17,11 @@ h1 {
     text-align: center;
 }
 
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
 .container {
     flex: 1;
     display: flex;
@@ -31,6 +36,8 @@ h1 {
 }
 
 .black-btn {
+    width: 20px;
+    height: 20px;
     background-color: black;
     border: black;
     border-radius: 100%;
@@ -49,6 +56,14 @@ h1 {
     border: red;
     border-radius: 100%;
     padding: 12px;
+}
+
+.erase-btn {
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    border: none;
+    padding: 0;
 }
 
 .sketch-brd {
