@@ -6,11 +6,13 @@ html, body {
     margin: 0;
     display: flex;
     flex-direction: column;
+    background-color: #F0EEED;
+    color: #332C39;
 }
 
 a {
     text-decoration: none;
-    color: #47B5FF;
+    color: #C92C6D;
 }
 
 h1 {
@@ -26,13 +28,22 @@ img {
     flex: 1;
     display: flex;
     align-items: center;
+    margin-left: 50px;
 }
 
 .menu {
-    border: 2px solid #256D85;
-    border-radius: 5px;
+    flex-basis: 20%;
+/*     box-shadow: 0 0 3px 2px #609EA2;
+    border-radius: 1px; */
     padding: 10px;
-    margin-left: 10px;
+}
+
+.clr-btn {
+    text-align: center;
+}
+
+.clr-btn button{
+    vertical-align: top;
 }
 
 .black-btn {
@@ -66,18 +77,22 @@ img {
     padding: 0;
 }
 
+.size-btn {
+    text-align: center;
+}
+
 .sketch-brd {
-    width: 600px;
-    height: 600px;
-    border: 2px solid #256D85;
-    border-radius: 5px;
+    width: 500px;
+    height: 500px;
+    box-shadow: 0 0 3px 2px #609EA2;
+    background-color: #FFF;
     padding: 2px;
-    margin-right: auto;
+    margin-left: 130px;
 }
 
 #sketch {
     display: grid;
-    height:600px;
+    height: 500px;
     grid-template-columns: repeat(var(--grid-size), 1fr);  /* --grid-size value from script.js */
     grid-gap: 2px;
 }
