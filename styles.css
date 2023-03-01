@@ -67,17 +67,17 @@ img {
 }
 
 .sketch-brd {
-    width: 400px;
-    height: 400px;
+    width: 600px;
+    height: 600px;
     border: 2px solid #256D85;
     border-radius: 5px;
     padding: 2px;
-    margin: 10px;
+    margin-right: auto;
 }
 
 #sketch {
     display: grid;
-    height: 400px;
+    height:600px;
     grid-template-columns: repeat(var(--grid-size), 1fr);  /* --grid-size value from script.js */
     grid-gap: 2px;
 }
