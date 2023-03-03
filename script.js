@@ -14,25 +14,20 @@ if (board.childElementCount == 0) {
     }
 }
 
-//Populate Grid from custom size buttons
-function customSize() {
 
+let customSize = () => {
     let size = Number(prompt("Choose your desired grid size (max 100):", "From 4 to 100"));
+    // Check for valid size, then populate grid
+    size < 4 || size > 100 || isNaN(size) ? (alert("Incorrect size. Size expected between 4 and 100. Default size set to 16."), size = 16) : size;
     gridSize(size);
-
-}
+};
 
 //Populate Grid from size buttons
-function gridSize(defaultSize) {
+let gridSize = defaultSize => {
 
     if (board.childElementCount != 0) {
         console.log('Sketch board already populated, emptying...');
         board.innerHTML = '';
-    }
-    
-    if (defaultSize < 4 || defaultSize > 100 || isNaN(defaultSize)) {
-        alert("Incorrect size. Size expected between 4 and 100. Default size set to 16.")
-        defaultSize = 16;
     }
 
     let totalSize = defaultSize * defaultSize;
@@ -52,7 +47,7 @@ function gridSize(defaultSize) {
 };
 
 // Change grid elements color on mouse over
-function paintDOM(clr) {
+let paintDOM = clr => {
     // Check for mouse state
     let mouseDown = 0;
     board.onmousedown = () => mouseDown = 1;
@@ -69,4 +64,4 @@ function paintDOM(clr) {
             color.style.backgroundColor = clr;
         }
     }, false);
-}
+};
